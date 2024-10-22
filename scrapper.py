@@ -222,7 +222,7 @@ def fetch_bus_details(name, link, state):
 
 
 bus_details = pd.DataFrame();
-for i,r in state_routes.head(5).iterrows():
+for i,r in state_routes.head(10).iterrows():
     link=r["route_link"]
     name=r["route_name"]
     state=r["state_name"]
