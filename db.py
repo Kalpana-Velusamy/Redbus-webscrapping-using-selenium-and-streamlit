@@ -39,7 +39,7 @@ my_cursor.execute('''CREATE TABLE IF NOT EXISTS bus_details(
                   route_name VARCHAR(255) NULL,
                   state_name VARCHAR(255) NULL
                   )''')
-my_cursor.execute("delete from bus_details")
+#my_cursor.execute("delete from bus_details")
 
 insert_query = '''INSERT INTO bus_details(
                     bus_name,
