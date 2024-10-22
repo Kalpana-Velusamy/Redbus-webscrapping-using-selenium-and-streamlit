@@ -12,7 +12,7 @@ import time
 import pandas as pd
 
 base_url = "https://www.redbus.in/"
-route_pages = 3
+route_pages = 2
 
 state_transports = [
         {
@@ -222,7 +222,7 @@ def fetch_bus_details(name, link, state):
 
 
 bus_details = pd.DataFrame();
-for i,r in state_routes.head(10).iterrows():
+for i,r in state_routes.head(50).iterrows():
     link=r["route_link"]
     name=r["route_name"]
     state=r["state_name"]
