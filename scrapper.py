@@ -12,7 +12,7 @@ import time
 import pandas as pd
 
 base_url = "https://www.redbus.in/"
-route_pages = 2
+route_pages = 3
 
 state_transports = [
         {
