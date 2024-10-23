@@ -42,8 +42,8 @@ def fetch_busses(time_range, state, route, bus_type, price_range):
         '''
     data = fetch_details(query);
     df = pd.DataFrame(data, columns=[
-             "bus_name", "bus_type", "departure_at", "arrival_at", "duration",
-            "price", "seats", "rating", "route_name", "state_name"
+             "Travels Name", "Bus Type", "Departure Time", "Arrival Time", "Duration",
+            "Price", "Seats Available", "Rating", "Route Name", "State Name"
         ])
     return df
 
@@ -70,28 +70,28 @@ details_df=pd.read_csv("formatted_df.csv")
 
 slt.set_page_config(layout="wide")
 
-web=option_menu(menu_title="OnlineBus",
+web=option_menu(menu_title="RedBus Online Booking",
                 options=["Home","States and Routes"],
-                icons=["house","info-circle"],
+                icons=["house","bus-front"],
                 orientation="horizontal"
                 )
 # Home page setting
 if web=="Home":
     
     slt.title("Redbus Data Scraping using Selenium And Dynamic Filtering using Streamlit")
-    slt.subheader(":blue[Domain:]  Transportation")
-    slt.subheader(":blue[Ojective:] ")
+    slt.subheader(":red[Domain:]  Transportation")
+    slt.subheader(":red[Ojective:] ")
     slt.markdown("The 'Redbus Data Scraping and Filtering with Streamlit Application' aims to revolutionize the transportation industry by providing a comprehensive solution for collecting, analyzing, and visualizing bus travel data. By utilizing Selenium for web scraping, this project automates the extraction of detailed information from Redbus, including bus routes, schedules, prices, and seat availability. By streamlining data collection and providing powerful tools for data-driven decision-making, this project can significantly improve operational efficiency and strategic planning in the transportation industry.")
-    slt.subheader(":blue[Overview:]")
+    slt.subheader(":red[Overview:]")
     slt.markdown("Selenium: Selenium is a tool used for automating web browsers. It is commonly used for web scraping, which involves extracting data from websites. Selenium allows you to simulate human interactions with a web page, such as clicking buttons, filling out forms, and navigating through pages, to collect the desired data...")
     slt.markdown('''Pandas: Use the powerful Pandas library to transform the dataset from CSV format into a structured dataframe.
                     Pandas helps data manipulation, cleaning, and preprocessing, ensuring that data was ready for analysis.''')
     slt.markdown('''MySQL: With help of SQL to establish a connection to a SQL database, enabling seamless integration of the transformed dataset
                     and the data was efficiently inserted into relevant tables for storage and retrieval.''')
     slt.markdown("Streamlit: Developed an interactive web application using Streamlit, a user-friendly framework for data visualization and analysis.")
-    slt.subheader(":blue[Skill-take:]")
+    slt.subheader(":red[Skill-take:]")
     slt.markdown("Selenium, Python, Pandas, MySQL,mysql-connector-python, Streamlit.")
-    slt.subheader(":blue[Developed-by:]  Kalpana Velusamy")
+    slt.subheader(":red[Developed-by:]  Kalpana Velusamy")
 
 if web == "States and Routes":
     states = fetch_state()
@@ -102,13 +102,13 @@ if web == "States and Routes":
     price_range =""
 
     with col1:
-        bus_type = slt.radio("Choose bus type", ("sleeper", "semi-sleeper", "others"))
+        bus_type = slt.radio("Bus Type", ("sleeper", "semi-sleeper", "others"))
     with col2:
-        price_range = slt.radio("Choose bus fare range", ("50-1000", "1000-2000", "2000 and above"))
-    time_range=slt.time_input("select the time")
+        price_range = slt.radio("Ticket Price", ("50-1000", "1000-2000", "2000 and above"))
+    time_range=slt.time_input("Time")
 
     routes = fetch_routes(state)
-    route=slt.selectbox("list of routes",routes)
+    route=slt.selectbox("List of Routes",routes)
 
 
     df_result = fetch_busses(time_range, state, route, bus_type, price_range)
