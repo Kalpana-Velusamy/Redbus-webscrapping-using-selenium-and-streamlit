@@ -19,6 +19,8 @@ def fetch_busses(time_range, state, route, bus_type, price_range):
         price_min, price_max = 50, 1000
     elif price_range == "1000-2000":
         price_min, price_max = 1000, 2000
+    elif price_range == "Any":
+        price_min, price_max = 50, 100000
     else:
         price_min, price_max = 2000, 100000
 
@@ -26,6 +28,8 @@ def fetch_busses(time_range, state, route, bus_type, price_range):
         bus_type_condition = "bus_type LIKE '%Sleeper%'"
     elif bus_type == "semi-sleeper":
         bus_type_condition = "bus_type LIKE '%A/c Semi Sleeper %'"
+    elif bus_type == "Any":
+        bus_type_condition = "bus_type IS NOT NULL"
     else:
         bus_type_condition = "bus_type NOT LIKE '%Sleeper%' AND bus_type NOT LIKE '%Semi-Sleeper%'"
 
@@ -102,9 +106,9 @@ if web == "States and Routes":
     price_range =""
 
     with col1:
-        bus_type = slt.radio("Bus Type", ("sleeper", "semi-sleeper", "others"))
+        bus_type = slt.radio("Bus Type", ("sleeper", "semi-sleeper", "others","Any"))
     with col2:
-        price_range = slt.radio("Ticket Price", ("50-1000", "1000-2000", "2000 and above"))
+        price_range = slt.radio("Ticket Price", ("50-1000", "1000-2000", "2000 and above","Any"))
     time_range=slt.time_input("Time")
 
     routes = fetch_routes(state)

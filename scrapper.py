@@ -12,7 +12,7 @@ import time
 import pandas as pd
 
 base_url = "https://www.redbus.in/"
-route_pages = 3
+route_pages = 2
 
 state_transports = [
         {
@@ -217,7 +217,7 @@ def fetch_bus_details(name, link, state):
 
 
 bus_details = pd.DataFrame();
-for i,r in state_routes.head(50).iterrows():
+for i,r in state_routes.head(20).iterrows():
     link=r["route_link"]
     name=r["route_name"]
     state=r["state_name"]
@@ -226,5 +226,6 @@ for i,r in state_routes.head(50).iterrows():
     bus_details = pd.concat([bus_details, details_df], ignore_index=True)
 
 bus_details_path=r"bus_details.csv"
-bus_details.to_csv(bus_details_path,index=False)
+bus_data_final = bus_details.dropna()
+bus_data_final.to_csv(bus_details_path,index=False)
 
