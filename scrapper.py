@@ -16,60 +16,55 @@ route_pages = 2
 
 state_transports = [
         {
-            "name":"KSRTC-KERALA",
-            "end_point":"online-booking/ksrtc-kerala/?utm_source=rtchometile"
-        },
-        {
-            "name":"APSRTC-Andhra",
-            "end_point":"online-booking/apsrtc/?utm_source=rtchometile"
-        },
-        {
-            "name":"TSRTC-Telangana",
-            "end_point":"online-booking/tsrtc/?utm_source=rtchometile"
-        },
-        {
-            "name":"KTCL-Goa",
-            "end_point":"online-booking/ktcl/?utm_source=rtchometile"
-        },
-        {
-            "name":"RSTC-Rajasthan",
-            "end_point":"online-booking/rsrtc/?utm_source=rtchometile"
-        },
-        {
-            "name":"SBSTC-South Bengal",
-            "end_point":"online-booking/south-bengal-state-transport-corporation-sbstc/?utm_source=rtchometile"
-        },
-        {
-            "name":"HRTC-Himachal",
-            "end_point":"online-booking/hrtc/?utm_source=rtchometile"
-        },
-        {
-            "name":"ASTC-Assam",
-            "end_point":"online-booking/astc/?utm_source=rtchometile"
-        },
-        {
-            "name":"UPSTC-Uttar Pradesh",
-            "end_point":"online-booking/uttar-pradesh-state-road-transport-corporation-upsrtc/?utm_source=rtchometile"
-        },
-        {
             "name":"WBTC-West Bengal",
             "end_point":"online-booking/wbtc-ctc/?utm_source=rtchometile"
         }
-
-    ]
+ ]
 
 # #10 states links
-# state_links=["https://www.redbus.in/online-booking/ksrtc-kerala/?utm_source=rtchometile",
-#              "https://www.redbus.in/online-booking/apsrtc/?utm_source=rtchometile",
-#              "https://www.redbus.in/online-booking/tsrtc/?utm_source=rtchometile",
-#              "https://www.redbus.in/online-booking/ktcl/?utm_source=rtchometile",
-#              "https://www.redbus.in/online-booking/rsrtc/?utm_source=rtchometile",
-#              "https://www.redbus.in/online-booking/south-bengal-state-transport-corporation-sbstc/?utm_source=rtchometile",
-#              "https://www.redbus.in/online-booking/hrtc/?utm_source=rtchometile",
-#              "https://www.redbus.in/online-booking/astc/?utm_source=rtchometile",
-#              "https://www.redbus.in/online-booking/uttar-pradesh-state-road-transport-corporation-upsrtc/?utm_source=rtchometile",
-#              "https://www.redbus.in/online-booking/wbtc-ctc/?utm_source=rtchometile"
-# ]
+# state_links=[
+#       {
+#           "name":"KSRTC-KERALA",
+#          "end_point":"online-booking/ksrtc-kerala/?utm_source=rtchometile"
+#        },
+#        {
+#            "name":"APSRTC-Andhra",
+#            "end_point":"online-booking/apsrtc/?utm_source=rtchometile"
+#        },
+#        {
+#            "name":"TSRTC-Telangana",
+#            "end_point":"online-booking/tsrtc/?utm_source=rtchometile"
+#        },
+#        {
+#            "name":"KTCL-Goa",
+#            "end_point":"online-booking/ktcl/?utm_source=rtchometile"
+#        },
+#        {
+#            "name":"RSTC-Rajasthan",
+#            "end_point":"online-booking/rsrtc/?utm_source=rtchometile"
+#        },
+#        {
+#            "name":"SBSTC-South Bengal",
+#            "end_point":"online-booking/south-bengal-state-transport-corporation-sbstc/?utm_source=rtchometile"
+#        },
+#        {
+#            "name":"HRTC-Himachal",
+#            "end_point":"online-booking/hrtc/?utm_source=rtchometile"
+#        },
+#        {
+#            "name":"ASTC-Assam",
+#            "end_point":"online-booking/astc/?utm_source=rtchometile"
+#        },
+#        {
+#            "name":"UPSTC-Uttar Pradesh",
+#            "end_point":"online-booking/uttar-pradesh-state-road-transport-corporation-upsrtc/?utm_source=rtchometile"
+#        },
+#        {
+#            "name":"WBTC-West Bengal",
+#            "end_point":"online-booking/wbtc-ctc/?utm_source=rtchometile"
+#        }
+#
+#    ]
 driver=webdriver.Chrome()
 
 driver.get(base_url)
