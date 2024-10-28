@@ -1,0 +1,12 @@
+.container {
+    background-color: #050000;  /* Change to your desired color */
+}
+.footer {position: fixed;left: 0;bottom: 0;width: 100%;background-color: #f05858;color: white;text-align: right;}
+.sidebar{
+    background-image: linear-gradient(#f28e8e,#f53939);
+    background-color: #f05858;
+}
+.selectbox {
+    width: 100px; /* Change this value to adjust the width */
+    font-size: 8px; /* Change this for font size */
+}

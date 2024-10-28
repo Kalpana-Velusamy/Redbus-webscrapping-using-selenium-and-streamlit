@@ -95,7 +95,7 @@ if web=="Home":
     slt.markdown("Streamlit: Developed an interactive web application using Streamlit, a user-friendly framework for data visualization and analysis.")
     slt.subheader(":red[Coding Done Using:]")
     slt.markdown("Selenium, Python, Pandas, MySQL,mysql-connector-python, Streamlit.")
-    slt.subheader(":red[Developed-by:]  Kalpana Velusamy")
+    slt.subheader(":red[Author:]  Kalpana Velusamy")
 
 if web == "Bus Search":
     states = fetch_state()

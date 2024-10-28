@@ -7,9 +7,14 @@ details_df["price"]=details_df["price"].str.replace("INR","")
 details_df["price"]=details_df["price"].astype(float)
 details_df["price"].fillna(0)
 
+details_df["seats"]=details_df["seats"].str.replace(" Seats available","")
+details_df["seats"]=details_df["seats"].astype(int)
+details_df["seats"].fillna(0)
+
 details_df["rating"]=details_df["rating"].str.replace("New","")
 details_df["rating"]=details_df["rating"].str.strip()
 details_df["rating"]=details_df["rating"].str.split().str[0]
+
 details_df["rating"] = pd.to_numeric(details_df["rating"], errors='coerce')
 details_df["rating"].fillna(0,inplace=True)
 
