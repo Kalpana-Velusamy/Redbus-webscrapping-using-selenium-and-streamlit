@@ -9,7 +9,7 @@ There are 3 coding files attached here:
 
 - scrapper.py
 - db.py
-- app.py
+- appnew.py
 
 # scrapper.py
 
@@ -26,7 +26,7 @@ There are 3 coding files attached here:
  - Bus details and route details captured from scrapper.py are inserted by the db.py
  - python mysql connector library used to handle the db connection
 
- # app.py
+ # appnew.py
  - app.py uses streamlit library to create interactive web app
  - Functions defined to connect to DB and fetch bus details based on the options selected (like state, route , bus type and so)
 
@@ -36,6 +36,6 @@ There are 3 coding files attached here:
 - Step2 : execute db.py
     `python db.py`
 - Step3 : execute app.y
-    `streamlit run app.py`
+    `streamlit run appnew.py`
 
 Use the interactive web app to see the bus details.
