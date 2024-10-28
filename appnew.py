@@ -155,7 +155,7 @@ slt.dataframe(df_result,
         },hide_index=True,use_container_width=True
               )
 
-footer = """<div class='footer'><p>Credits: Kalpna Velusamy</p></div>"""
+footer = """<div class='footer'><p>Credits: Kalpana Velusamy</p></div>"""
 slt.markdown(footer, unsafe_allow_html=True)
 
     
