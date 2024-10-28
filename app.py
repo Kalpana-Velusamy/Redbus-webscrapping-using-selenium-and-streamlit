@@ -36,7 +36,7 @@ def fetch_busses(time_range, state, route, bus_type, price_range):
     query = f'''
             SELECT 
              bus_name, bus_type, departure_at, arrival_at, duration,
-            price, seats, rating, route_name, state_name
+            price, seats, rating
                FROM bus_details
             WHERE price BETWEEN {price_min} AND {price_max}
             AND route_name = "{route}"
@@ -47,7 +47,7 @@ def fetch_busses(time_range, state, route, bus_type, price_range):
     data = fetch_details(query);
     df = pd.DataFrame(data, columns=[
              "Travels Name", "Bus Type", "Departure Time", "Arrival Time", "Duration",
-            "Price", "Seats Available", "Rating", "Route Name", "State Name"
+            "Price", "Seats Available", "Rating"
         ])
     return df
 
@@ -75,7 +75,7 @@ details_df=pd.read_csv("formatted_df.csv")
 slt.set_page_config(layout="wide")
 
 web=option_menu(menu_title="RedBus Online Booking",
-                options=["Home","States and Routes"],
+                options=["Home","Bus Search"],
                 icons=["house","bus-front"],
                 orientation="horizontal"
                 )
@@ -97,9 +97,9 @@ if web=="Home":
     slt.markdown("Selenium, Python, Pandas, MySQL,mysql-connector-python, Streamlit.")
     slt.subheader(":red[Developed-by:]  Kalpana Velusamy")
 
-if web == "States and Routes":
+if web == "Bus Search":
     states = fetch_state()
-    state = slt.selectbox("Lists of States", states)
+    state = slt.selectbox("Lists of States", states,index=None)
 
     col1,col2=slt.columns(2)
     bus_type =""
@@ -109,11 +109,12 @@ if web == "States and Routes":
         bus_type = slt.radio("Bus Type", ("sleeper", "semi-sleeper", "others","Any"))
     with col2:
         price_range = slt.radio("Ticket Price", ("50-1000", "1000-2000", "2000 and above","Any"))
-    time_range=slt.time_input("Time")
+    time_range=slt.time_input("Departure Time",value=None)
 
     routes = fetch_routes(state)
-    route=slt.selectbox("List of Routes",routes)
+    route=slt.selectbox("List of Routes",routes,index=None)
 
 
     df_result = fetch_busses(time_range, state, route, bus_type, price_range)
     slt.dataframe(df_result)
+    
